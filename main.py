@@ -8,7 +8,7 @@ import os.path
 import logging
 
 
-UA = 'mbelvadi@gmail.com'
+UA = 'Mozilla/5.0'
 SERVICE1 = 'COP'
 base_URL = 'https://registry.projectcounter.org/api/v1/platform/'
 myheaders = {'User-Agent': UA}
