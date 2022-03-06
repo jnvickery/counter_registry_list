@@ -1,22 +1,15 @@
 """
-The list of platforms is here: 
-https://registry.projectcounter.org/api/v1/platform/ 
-and just by appending the platform id to this url 
-(e.g. https://registry.projectcounter.org/api/v1/platform/60d34416-9666-4b09-8d58-220ffc04901e/) 
-you will get all the details for that platform.
+COUNTER Registry List
 """
-# import json
-# import sys
+
 import requests
 from pathlib import Path
 import os.path
 import logging
-# from isbnlib import meta
-from isbnlib.registry import bibformatters
+
 
 UA = 'mbelvadi@gmail.com'
 SERVICE1 = 'COP'
-jsondata = bibformatters['json']
 base_URL = 'https://registry.projectcounter.org/api/v1/platform/'
 myheaders = {'User-Agent': UA}
 
@@ -80,7 +73,7 @@ if __name__ == "__main__":
         recordsfolder = Path('.')
 
     outfile = 'registry-entries.tsv'
-    loggerfile = 'log-' + outfile + ".txt"
+    loggerfile = 'log-registry-entries.txt'
     infologger = logging.getLogger()
     infologger.setLevel(logging.WARNING)  # DEBUG, WARNING, ERROR -  should be upper-case here but lower case when used
     infohandler = logging.FileHandler(loggerfile, 'w', 'utf-8')  # or whatever
