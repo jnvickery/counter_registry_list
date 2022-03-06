@@ -18,3 +18,7 @@ https://registry.projectcounter.org/api/v1/platform/
 
 ## Example of platform instance:
 https://registry.projectcounter.org/api/v1/platform/60d34416-9666-4b09-8d58-220ffc04901e/
+
+
+## The SUSHI API for Project COUNTER COP5 is documented at:
+https://www.projectcounter.org/counter-sushi/
