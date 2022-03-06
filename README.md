@@ -22,3 +22,11 @@ https://registry.projectcounter.org/api/v1/platform/60d34416-9666-4b09-8d58-220f
 
 ## The SUSHI API for Project COUNTER COP5 is documented at:
 https://www.projectcounter.org/counter-sushi/
+
+See also my project providing a COUNTER harvesting tool (also python, with GtK) for a GUI
+interface to collect a library's usage data into an sqlite3 database, with friendly search tools.
+https://github.com/CS-4820-Library-Project/COUNTER-5-Report-Tool
+That project requires the vendor configuration info found in the Registry, 
+along with the library's unique credentials (customer_id, requestor_id, api_key).
+The Registry provides for each vendor/platform/provider information about who to contact or where to 
+look for those credentials.
