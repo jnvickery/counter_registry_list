@@ -1,0 +1,21 @@
+## Python stuff
+__pycache__/
+
+# environments
+env/
+venv/
+
+# environment variables
+.env
+
+## Jupyter Notebook stuff
+*/.ipynb_checkpoints/*
+
+## Macbook stuff
+.DS_Store
+
+# test dir
+test/
+
+# data dir (final csv output)
+data/
