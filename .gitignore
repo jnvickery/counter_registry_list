@@ -19,3 +19,6 @@ test/
 
 # data dir (final csv output)
 data/
+
+# log file
+log/
