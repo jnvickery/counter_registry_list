@@ -1,23 +1,19 @@
 import logging
+import pandas as pd
 import requests
 from requests.exceptions import HTTPError
 
+logger = logging.getLogger('retrieve_one')
 
-def retrieve_one_vendor_recs(vendorurl):
-    infologger.debug(f'\n\nStarting retrieve one for vendorurl: {vendorurl}')
+
+def retrieve_one_vendor_recs(params, vendorid):
     try:
-        r = requests.get(vendorurl, headers=myheaders)
-        # infologger.debug(f'Text: {r.text}')
-        # infologger.debug(f"r.ok: {r.ok}\nr.json[sushi_services]:{r.json()['sushi_services']}\n")
-        if not r.ok:
-            infologger.error(" Request returned http error: {}".format(r.status_code))
-            return None
-    except Exception as e:
-        infologger.exception("URL request failed: {}".format(e))
-        return None
-    infologger.debug(f"r.json[sushi_services]:{r.json()['sushi_services']}\n")
-    sushi_dict = r.json()['sushi_services'][0]
-    infologger.debug(f"sushi_dict[data_host]:{sushi_dict['data_host']}\n")
-    infologger.debug(f"sushi_dict[counter_release]:{sushi_dict['counter_release']}\n")
-    infologger.debug(f"counter_release: {sushi_dict['counter_release']}\n\n")
-    return sushi_dict
+        r = requests.get(params.base_url + vendorid)
+        r.raise_for_status()
+    except HTTPError as http_err:
+        logger.exception("HTTP Error: {}".format(http_err))
+    else:
+        alldata = r.json()
+        df = pd.json_normalize(alldata['sushi_services'])
+        df = df[params.sushidata]
+        return df

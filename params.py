@@ -14,10 +14,14 @@ class Params:
 
     # output file
     outdir = Path('data')
-    outfile = outdir.joinpath('registry-entries.tsv')
+    outfile = outdir.joinpath('sushi_entries.csv')
 
     # base API url
     base_url = 'https://registry.projectcounter.org/api/v1/platform/'
+
+    # sushi service elements to retrieve
+    sushidata = ['counter_release', 'url',
+                 'customer_id_info', 'requestor_id_info']
 
     # date params for query
     # get previous month

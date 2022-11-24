@@ -7,8 +7,8 @@ logger = logging.getLogger('retrieve_all')
 
 def retrieve_all_vendor_recs(params):
     """Gets all platforms from API.
-    Returns a dictionary with platform name and API ID
-    to check each individual platform
+    Returns a list with platform ID
+    to check each individual platform API
     """
     v_list = []
     try:
@@ -25,5 +25,5 @@ def retrieve_all_vendor_recs(params):
                 logger.warning(f'No sushi services listed: {vname}')
             else:
                 vid = platform_dict['id']
-                v_list[vname] = vid
+                v_list.append(vid)
         return v_list
