@@ -16,4 +16,5 @@ def retrieve_one_vendor_recs(params, vendorid):
         alldata = r.json()
         df = pd.json_normalize(alldata['sushi_services'])
         df = df[params.sushidata]
+        df.insert(0, 'name', alldata['name'])
         return df

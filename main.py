@@ -21,7 +21,7 @@ def main():
     vendids = retrieve_all_vendor_recs(params)
     for vendorid in vendids:
         df = retrieve_one_vendor_recs(params, vendorid)
-        sushi_df = pd.concat(sushi_df, df)
+        sushi_df = pd.concat([sushi_df, df], ignore_index=True)
 
     sushi_df.to_csv(params.outfile, index=False)
 
