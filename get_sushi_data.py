@@ -6,7 +6,7 @@ from requests.exceptions import HTTPError
 logger = logging.getLogger('retrieve_one')
 
 
-def retrieve_one_vendor_recs(params, vendorid):
+def get_sushi(params, vendorid):
     try:
         r = requests.get(params.base_url + vendorid)
         r.raise_for_status()

@@ -5,7 +5,7 @@ from requests.exceptions import HTTPError
 logger = logging.getLogger('retrieve_all')
 
 
-def retrieve_all_vendor_recs(params):
+def get_ids(params):
     """Gets all platforms from API.
     Returns a list with platform ID
     to check each individual platform API

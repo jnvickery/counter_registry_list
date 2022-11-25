@@ -3,8 +3,8 @@ import pandas as pd
 
 from params import Params
 
-from retrieve_all import retrieve_all_vendor_recs
-from retrieve_one import retrieve_one_vendor_recs
+from get_vendorids import get_ids
+from get_sushi_data import get_sushi
 
 
 def main():
@@ -18,9 +18,9 @@ def main():
         format=('%(asctime)s.%(msecs)03d %(levelname)s '
                 '%(module)s - %(funcName)s: %(message)s'),
         datefmt='%Y-%m-%d %H:%M:%S')
-    vendids = retrieve_all_vendor_recs(params)
+    vendids = get_ids(params)
     for vendorid in vendids:
-        df = retrieve_one_vendor_recs(params, vendorid)
+        df = get_sushi(params, vendorid)
         sushi_df = pd.concat([sushi_df, df], ignore_index=True)
 
     sushi_df.to_csv(params.outfile, index=False)
