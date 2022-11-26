@@ -1,6 +1,24 @@
 # Harvest the Project COUNTER Registry
 
-Project COUNTER's Registry contains information about  vendors/platforms/providers that are compliant with the Code of Practice Release 5 standard for online resource (ebooks, ejournals, etc.) usage.
+Credit and thanks to [Melissa Belvadi](https://github.com/mbelvadi).  
+This is forked from 
+https://github.com/mbelvadi/counter_registry_list
+
+## Project Organization
+├── LICENSE  
+├── README.md  
+├── data  
+│   ├── output csv file  
+├── get_sushi_data.py       <- function to get sushi instance data for platform 
+├── get_vendorids.py        <- function to get list of vendor/platform ids
+├── log  
+│   └── registry_log.log  
+├── main.py  
+├── params.py               <- make changes to default here (output file name, etc.)
+├── requirements.txt
+
+
+The Project COUNTER Registry contains information about  vendors/platforms/providers that are compliant with the Code of Practice Release 5 standard for online resource (ebooks, ejournals, etc.) usage.
 
 The Registry includes information about the platform/provider including contact information, what COP5 (or COP4) reports they support, and all of the specifics regarding how they support COP5 SUSHI API requests for usage reports, basically everything except an institution's own required credentials (customer_id plus optionally requestor_id and api_key) and other constraints on using their SUSHI API server (eg if they also require the request to come from the customer's IP range, if they have volume or speed limits on server requests, etc.) 
 
@@ -39,3 +57,7 @@ That project requires the vendor configuration info found in the Registry,
 along with the library's unique credentials (customer_id, requestor_id, api_key).
 The Registry provides for each vendor/platform/provider information about who to contact or where to 
 look for those credentials.
+.
+
+
+4 directories, 15 files
