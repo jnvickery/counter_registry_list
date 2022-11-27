@@ -18,7 +18,7 @@ venv/
 test/
 
 # data dir (final csv output)
-data/
+data/*.csv
 
 # log file
-log/
+log/registry_log.log

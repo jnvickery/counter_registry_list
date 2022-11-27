@@ -8,7 +8,7 @@ logger = logging.getLogger('retrieve_all')
 def get_ids(params):
     """Gets all platforms from API.
     Returns a list with platform ID
-    to check each individual platform API
+    to check each individual platform API.
     """
     v_list = []
     try:

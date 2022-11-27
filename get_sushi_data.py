@@ -7,6 +7,10 @@ logger = logging.getLogger('retrieve_one')
 
 
 def get_sushi(params, vendorid):
+    """Get sushi service data from
+    individual platform instance.
+    Returns a DataFrame.
+    """
     try:
         r = requests.get(params.base_url + vendorid)
         r.raise_for_status()
